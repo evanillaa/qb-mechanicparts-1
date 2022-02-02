@@ -92,11 +92,212 @@ function IsBackEngine(vehModel)
     return false
 end
 
+--- PARTS CRAFTING ---
+-- ENGINE
+RegisterNetEvent('craft:engine1')
+AddEventHandler("craft:engine1", function()
+    QBCore.Functions.Progressbar("craft_engine1", "Building Engine...", 15000, false, true, {
+        disableMovement = true,
+        disableCarMovement = true,
+        disableMouse = false,
+        disableCombat = true,
+    }, {
+        animDict = "mini@repair",
+        anim = "fixing_a_player",
+        flags = 16,
+    }, {}, {}, function() 
+        local playerPed = PlayerPedId()
+        local success = exports['qb-lock']:StartLockPickCircle(3,10)
+   if success then
+        StopAnimTask(ped, dict, "machinic_loop_mechandplayer", 1.0)
+        TriggerServerEvent("craft:engine1")
+        ClearPedTasks(playerPed)
+    else
+        QBCore.Functions.Notify("Failed!", "error")
+        ClearPedTasks(playerPed)
+        end
+    end)
+end)
 
---Parts Install 
+RegisterNetEvent('craft:engine2')
+AddEventHandler("craft:engine2", function()
+    QBCore.Functions.Progressbar("craft_engine2", "Building Engine...", 15000, false, true, {
+        disableMovement = true,
+        disableCarMovement = true,
+        disableMouse = false,
+        disableCombat = true,
+    }, {
+        animDict = "mini@repair",
+        anim = "fixing_a_player",
+        flags = 16,
+    }, {}, {}, function() 
+        local playerPed = PlayerPedId()
+        local success = exports['qb-lock']:StartLockPickCircle(3,9)
+   if success then
+        StopAnimTask(ped, dict, "machinic_loop_mechandplayer", 1.0)
+        TriggerServerEvent("craft:engine2")
+        ClearPedTasks(playerPed)
+    else
+        QBCore.Functions.Notify("Failed!", "error")
+        ClearPedTasks(playerPed)
+        end
+    end)
+end)
 
---Engine
+RegisterNetEvent('craft:engine3')
+AddEventHandler("craft:engine3", function()
+    QBCore.Functions.Progressbar("craft_engine3", "Building Engine...", 15000, false, true, {
+        disableMovement = true,
+        disableCarMovement = true,
+        disableMouse = false,
+        disableCombat = true,
+    }, {
+        animDict = "mini@repair",
+        anim = "fixing_a_player",
+        flags = 16,
+    }, {}, {}, function() 
+        local playerPed = PlayerPedId()
+        local success = exports['qb-lock']:StartLockPickCircle(4,9)
+   if success then
+        StopAnimTask(ped, dict, "machinic_loop_mechandplayer", 1.0)
+        TriggerServerEvent("craft:engine3")
+        ClearPedTasks(playerPed)
+    else
+        QBCore.Functions.Notify("Failed!", "error")
+        ClearPedTasks(playerPed)
+        end
+    end)
+end)
 
+RegisterNetEvent('craft:engine4')
+AddEventHandler("craft:engine4", function()
+    QBCore.Functions.Progressbar("craft_engine4", "Building Engine...", 15000, false, true, {
+        disableMovement = true,
+        disableCarMovement = true,
+        disableMouse = false,
+        disableCombat = true,
+    }, {
+        animDict = "mini@repair",
+        anim = "fixing_a_player",
+        flags = 16,
+    }, {}, {}, function() 
+        local playerPed = PlayerPedId()
+        local success = exports['qb-lock']:StartLockPickCircle(4,8)
+   if success then
+        StopAnimTask(ped, dict, "machinic_loop_mechandplayer", 1.0)
+        TriggerServerEvent("craft:engine4")
+        ClearPedTasks(playerPed)
+    else
+        QBCore.Functions.Notify("Failed!", "error")
+        ClearPedTasks(playerPed)
+        end
+    end)
+end)
+
+-- BRAKES
+RegisterNetEvent('craft:brake0')
+AddEventHandler("craft:brake0", function()
+    QBCore.Functions.Progressbar("craft_brake0", "Building Brake Setup...", 10000, false, true, {
+        disableMovement = true,
+        disableCarMovement = true,
+        disableMouse = false,
+        disableCombat = true,
+    }, {
+        animDict = "mini@repair",
+        anim = "fixing_a_player",
+        flags = 16,
+    }, {}, {}, function() 
+        local playerPed = PlayerPedId()
+        local success = exports['qb-lock']:StartLockPickCircle(1,30)
+   if success then
+        StopAnimTask(ped, dict, "machinic_loop_mechandplayer", 1.0)
+        TriggerServerEvent("craft:brake0")
+        ClearPedTasks(playerPed)
+    else
+        QBCore.Functions.Notify("Failed!", "error")
+        ClearPedTasks(playerPed)
+        end
+    end)
+end)
+
+RegisterNetEvent('craft:brake1')
+AddEventHandler("craft:brake1", function()
+    QBCore.Functions.Progressbar("craft_brake1", "Building Brake Setup...", 10000, false, true, {
+        disableMovement = true,
+        disableCarMovement = true,
+        disableMouse = false,
+        disableCombat = true,
+    }, {
+        animDict = "mini@repair",
+        anim = "fixing_a_player",
+        flags = 16,
+    }, {}, {}, function() 
+        local playerPed = PlayerPedId()
+        local success = exports['qb-lock']:StartLockPickCircle(1,30)
+   if success then
+        StopAnimTask(ped, dict, "machinic_loop_mechandplayer", 1.0)
+        TriggerServerEvent("craft:brake1")
+        ClearPedTasks(playerPed)
+    else
+        QBCore.Functions.Notify("Failed!", "error")
+        ClearPedTasks(playerPed)
+        end
+    end)
+end)
+
+-- TURBO
+RegisterNetEvent('craft:turbo0')
+AddEventHandler("craft:turbo0", function()
+    QBCore.Functions.Progressbar("craft_turbo0", "Building Turbo... STUSTUTUTU!", 11000, false, true, {
+        disableMovement = true,
+        disableCarMovement = true,
+        disableMouse = false,
+        disableCombat = true,
+    }, {
+        animDict = "mini@repair",
+        anim = "fixing_a_player",
+        flags = 16,
+    }, {}, {}, function() 
+        local playerPed = PlayerPedId()
+        local success = exports['qb-lock']:StartLockPickCircle(1,30)
+   if success then
+        StopAnimTask(ped, dict, "machinic_loop_mechandplayer", 1.0)
+        TriggerServerEvent("craft:turbo0")
+        ClearPedTasks(playerPed)
+    else
+        QBCore.Functions.Notify("Failed!", "error")
+        ClearPedTasks(playerPed)
+        end
+    end)
+end)
+
+RegisterNetEvent('craft:turbo1')
+AddEventHandler("craft:turbo1", function()
+    QBCore.Functions.Progressbar("craft_turbo1", "Building Turbo... STUTUTUTU!", 11000, false, true, {
+        disableMovement = true,
+        disableCarMovement = true,
+        disableMouse = false,
+        disableCombat = true,
+    }, {
+        animDict = "mini@repair",
+        anim = "fixing_a_player",
+        flags = 16,
+    }, {}, {}, function() 
+        local playerPed = PlayerPedId()
+        local success = exports['qb-lock']:StartLockPickCircle(1,30)
+   if success then
+        StopAnimTask(ped, dict, "machinic_loop_mechandplayer", 1.0)
+        TriggerServerEvent("craft:turbo1")
+        ClearPedTasks(playerPed)
+    else
+        QBCore.Functions.Notify("Failed!", "error")
+        ClearPedTasks(playerPed)
+        end
+    end)
+end)
+
+--- PARTS INSTALLATION ---
+-- ENGINE
 RegisterNetEvent('qb-mechanicparts:E0')
 AddEventHandler('qb-mechanicparts:E0', function()
     local vehicle = QBCore.Functions.GetClosestVehicle()
@@ -1269,7 +1470,6 @@ AddEventHandler('qb-mechanicparts:Turbo1', function()
         end
 end)
 
-
 -------------------------USING QB MENU FOR BELOW-------------------------
 ---------YOU MUST CONVERT TO WHAT YOUR USING IF NOT USING QB MENU--------
 -------------------------------------------------------------------------
@@ -1318,15 +1518,15 @@ end)
 -- VEHICLE HEALTH/STATUS
 RegisterNetEvent('craft:vehstatus', function()
 
-    statusList = exports['qb-mechanicjob']:GetVehicleStatusList(plate)
-    fuel = exports['LegacyFuel']:GetFuel(vehicle)
-    vehicle = QBCore.Functions.GetClosestVehicle()
-    plate = GetVehicleNumberPlateText(vehicle)
-    engineHealth = GetVehicleEngineHealth(vehicle)
-    vehTemp = GetVehicleEngineTemperature(vehicle)
-    bodyHealth = GetVehicleBodyHealth(vehicle)
-    fuelHealth = exports['LegacyFuel']:GetFuel(vehicle)
-    tankHealth = GetVehiclePetrolTankHealth(vehicle)
+    local statusList = exports['qb-mechanicjob']:GetVehicleStatusList(plate)
+    local fuel = exports['LegacyFuel']:GetFuel(vehicle)
+    local vehicle = QBCore.Functions.GetClosestVehicle()
+    local plate = GetVehicleNumberPlateText(vehicle)
+    local engineHealth = GetVehicleEngineHealth(vehicle)
+    local vehTemp = GetVehicleEngineTemperature(vehicle)
+    local bodyHealth = GetVehicleBodyHealth(vehicle)
+    local fuelHealth = exports['LegacyFuel']:GetFuel(vehicle)
+    local tankHealth = GetVehiclePetrolTankHealth(vehicle)
 
     exports['qb-menu']:openMenu({
         {
@@ -1372,16 +1572,16 @@ end)
 -- VEHICLE MODIFICATIONS
 RegisterNetEvent('craft:vehmods', function()
 
-    ped = PlayerPedId()
-    vehicle = QBCore.Functions.GetClosestVehicle()
-    plate = QBCore.Functions.GetPlate(vehicle)
-    statusList = exports['qb-mechanicjob']:GetVehicleStatusList(plate)
-    fuel = exports['LegacyFuel']:GetFuel(vehicle)
-    engine = GetVehicleMod(veh, 11)
-    brakes = GetVehicleMod(veh, 12)
-    transmission = GetVehicleMod(veh, 13)
-    suspension = GetVehicleMod(veh, 15)
-    turbo = IsToggleModOn(veh, 18)
+    local ped = PlayerPedId()
+    local vehicle = QBCore.Functions.GetClosestVehicle()
+    local plate = QBCore.Functions.GetPlate(vehicle)
+    local statusList = exports['qb-mechanicjob']:GetVehicleStatusList(plate)
+    local fuel = exports['LegacyFuel']:GetFuel(vehicle)
+    local engine = GetVehicleMod(veh, 11)
+    local brakes = GetVehicleMod(veh, 12)
+    local transmission = GetVehicleMod(veh, 13)
+    local suspension = GetVehicleMod(veh, 15)
+    local turbo = IsToggleModOn(veh, 18)
 
     if engine == -1 then
         engine = "Standard"
@@ -1494,6 +1694,199 @@ RegisterNetEvent('craft:vehmods', function()
             txt = "",
             params = {
                 event = "qb-menu:client:closeMenu",
+            }
+        },
+    })
+end)
+
+-- QB MENU FOR CRAFTING
+
+RegisterNetEvent('craft:mechanicparts', function()
+    exports['qb-menu']:openMenu({
+        {
+            id = 1,
+            header = "Parts Menu",
+            txt = "",
+            isMenuHeader = true
+        },
+        {
+            id = 2,
+            header = "Engine Upgrades",
+            txt = " View engine upgrades for vehicles ",
+            params = {
+                event = "craft:engines",
+            }
+        },
+        {
+            id = 3,
+            header = "Brake Modifications",
+            txt = " View brake modifications for vehicles ",
+            params = {
+                event = "craft:brakes",
+            }
+        },
+        {
+            id = 4,
+            header = "Turbos",
+            txt = " View turbo options for vehicles ",
+            params = {
+                event = "craft:turbos",
+            }
+        },
+        {
+            id = 5,
+            header = "Close Menu",
+            txt = "",
+            params = {
+                event = "qb-menu:closeMenu",
+            }
+        },
+    })
+end)
+
+-----CRAFTING MENU
+
+RegisterNetEvent('craft:engines', function()
+    exports['qb-menu']:openMenu({
+        {
+            id = 1,
+            header = "Engine Modifications",
+            txt = "",
+            isMenuHeader = true
+        },
+        {
+            id = 2,
+            header = "Stock Engine",
+            txt = " 3x Metalscrap | 2x Rubber | 1x Iron | 2x Plastic ",
+            params = {
+                event = "craft:engine0",
+            }
+        },
+        {
+            id = 3,
+            header = "Engine Upgrade B",
+            txt = " 3x Metalscrap | 2x Rubber | 1x Iron | 2x Plastic ",
+            params = {
+                event = "craft:engine1",
+            }
+        },
+        {
+            id = 4,
+            header = "Engine Upgrade C",
+            txt = " 4x Metalscrap | 2x Rubber | 1x Iron | 2x Plastic ",
+            params = {
+                event = "craft:engine2",
+            }
+        },
+        {
+            id = 5,
+            header = "Engine Upgrade D",
+            txt = " 4x Metalscrap | 2x Rubber | 1x Iron | 3x Plastic ",
+            params = {
+                event = "craft:engine3",
+            }
+        },
+        {
+            id = 6,
+            header = "Engine Upgrade S",
+            txt = " 4x Metalscrap | 2x Rubber | 1x Iron | 3x Plastic | 3x Aluminum ",
+            params = {
+                event = "craft:engine4",
+            }
+        },
+        {
+            id = 7,
+            header = "Main Menu",
+            txt = "Back to main menu",
+            params = {
+                event = "craft:mechanicparts",
+            }
+        },
+        {
+            id = 8,
+            header = "Close Menu",
+            txt = "",
+            params = {
+                event = "qb-menu:closeMenu",
+            }
+        },
+
+    })
+end)
+
+RegisterNetEvent('craft:brakes', function()
+    exports['qb-menu']:openMenu({
+        {
+            id = 1,
+            header = "Brake Modifications",
+            txt = "",
+            isMenuHeader = true
+        },
+        {
+            id = 2,
+            header = "Stock Brakes",
+            txt = "2x Rubber | 1x Iron | 2x Metalscrap",
+            params = {
+                event = "craft:brake0",
+            }
+        },
+        {
+            id = 3,
+            header = "Main Menu",
+            txt = "Back to main menu",
+            params = {
+                event = "craft:mechanicparts",
+            }
+        },
+        {
+            id = 4,
+            header = "Close Menu",
+            txt = "",
+            params = {
+                event = "qb-menu:closeMenu",
+            }
+        },
+    })
+end)
+
+RegisterNetEvent('craft:turbos', function()
+    exports['qb-menu']:openMenu({
+        {
+            id = 1,
+            header = "Turbos",
+            txt = "",
+            isMenuHeader = true
+        },
+        {
+            id = 2,
+            header = "Stock (N/A)",
+            txt = "2x Rubber | 1x Iron | 2x Metalscrap",
+            params = {
+                event = "craft:turbo0",
+            }
+        },
+        {
+            id = 3,
+            header = "Turbo",
+            txt = "2x Rubber | 1x Iron | 2x Metalscrap",
+            params = {
+                event = "craft:turbo1",
+            }
+        },
+        {
+            id = 4,
+            header = "Main Menu",
+            txt = "Back to main menu",
+            params = {
+                event = "craft:mechanicparts",
+            }
+        },
+        {
+            id = 5,
+            header = "Close Menu",
+            txt = "",
+            params = {
+                event = "qb-menu:closeMenu",
             }
         },
     })
