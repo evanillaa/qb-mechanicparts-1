@@ -329,8 +329,7 @@ Then, lastly:
         ["label"] = "Tuner Shop",
         ["type"] = "normal",
         ["coords"] = {
-            [1] = vector3(148.36, -3050.99, 7.04),
-            [2] = vector3(-35.85, -1070.24, 28.4),
+            [1] = vector3(148.36, -3050.99, 7.04)
         },
         ["products"] = Config.Products["mechanic"],
         ["showblip"] = false,
