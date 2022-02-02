@@ -11,8 +11,7 @@ Preview :
 - This Job has been tested on the latest build as of 2/2/2022
 
 Issues :
-- Ran into issues where it wasnt saving the upgrades, as soon as you complete them and check mods it was still completely stock, putting this up in its current state in the hopes someone can get it working...
-- This could simply be a "me" issue on our server, if you complete the following steps, it SHOULD work though... 
+- Most now fixed, that I'm aware of. 
 - Feedback is greatly appreciated, I am simply looking to update the script and effort originally create by DrB1ackBeard, I deserve NO CREDIT whatsoever for this project!
 
 ## Dependencies :
