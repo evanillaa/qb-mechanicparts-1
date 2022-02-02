@@ -1470,236 +1470,13 @@ AddEventHandler('qb-mechanicparts:Turbo1', function()
         end
 end)
 
+
+
 -------------------------USING QB MENU FOR BELOW-------------------------
 ---------YOU MUST CONVERT TO WHAT YOUR USING IF NOT USING QB MENU--------
 -------------------------------------------------------------------------
 
 -- VEHICLE MENU
-RegisterNetEvent('craft:vehmenu', function()
-    
-    local ped = PlayerPedId()
-    local vehicle = QBCore.Functions.GetClosestVehicle()
-    local plate = QBCore.Functions.GetPlate(vehicle)
-
-    exports['qb-menu']:openMenu({
-        {
-            id = 1,
-            header = "Vehicle: " .. plate,
-            txt = "",
-            isMenuHeader = true
-        },
-        {
-            id = 2,
-            header = "Vehicle Status",
-            txt = "View vehicle health and status",
-            params = {
-                event = "craft:vehstatus",
-            }
-        },
-        {
-            id = 3,
-            header = "Vehicle Modifications",
-            txt = "View vehicles modifications and upgrades",
-            params = {
-                event = "craft:vehmods",
-            }
-        },
-        {
-            id = 4,
-            header = "Close Menu",
-            txt = "",
-            params = {
-                event = "qb-menu:client:closeMenu",
-            }
-        },
-    })
-end)
-
--- VEHICLE HEALTH/STATUS
-RegisterNetEvent('craft:vehstatus', function()
-
-    local statusList = exports['qb-mechanicjob']:GetVehicleStatusList(plate)
-    local fuel = exports['LegacyFuel']:GetFuel(vehicle)
-    local vehicle = QBCore.Functions.GetClosestVehicle()
-    local plate = GetVehicleNumberPlateText(vehicle)
-    local engineHealth = GetVehicleEngineHealth(vehicle)
-    local vehTemp = GetVehicleEngineTemperature(vehicle)
-    local bodyHealth = GetVehicleBodyHealth(vehicle)
-    local fuelHealth = exports['LegacyFuel']:GetFuel(vehicle)
-    local tankHealth = GetVehiclePetrolTankHealth(vehicle)
-
-    exports['qb-menu']:openMenu({
-        {
-            id = 1,
-            header = "Fuel Level",
-            txt = "Status: " .. math.ceil(fuelHealth) .. ".0% / 100.0%",
-        },
-        {
-            id = 2,
-            header = "Engine Health",
-            txt = "Status: " .. math.ceil(engineHealth / 10) .. "% / 100.0%",
-        },
-        {
-            id = 3,
-            header = "Body Health",
-            txt = "Status: " .. math.ceil(bodyHealth / 10) .. "% / 100.0%",
-        },
-        {
-            id = 4,
-            header = "Engine Temperature",
-            txt = "Status: " .. math.ceil(vehTemp) .. "° C",
-        }, 
-
-        {
-            id = 5,
-            header = "Main Menu",
-            txt = "Back to main menu",
-            params = {
-                event = "craft:vehmenu",
-            }
-        },
-        {
-            id = 6,
-            header = "Close Menu",
-            txt = "",
-            params = {
-                event = "qb-menu:client:closeMenu",
-            }
-        },
-    })
-end)
-
--- VEHICLE MODIFICATIONS
-RegisterNetEvent('craft:vehmods', function()
-
-    local ped = PlayerPedId()
-    local vehicle = QBCore.Functions.GetClosestVehicle()
-    local plate = QBCore.Functions.GetPlate(vehicle)
-    local statusList = exports['qb-mechanicjob']:GetVehicleStatusList(plate)
-    local fuel = exports['LegacyFuel']:GetFuel(vehicle)
-    local engine = GetVehicleMod(veh, 11)
-    local brakes = GetVehicleMod(veh, 12)
-    local transmission = GetVehicleMod(veh, 13)
-    local suspension = GetVehicleMod(veh, 15)
-    local turbo = IsToggleModOn(veh, 18)
-
-    if engine == -1 then
-        engine = "Standard"
-    elseif
-    engine == 0 then
-        engine = "Stage 1 Upgrade"
-    elseif
-    engine == 1 then
-        engine = "Stage 2 Upgrade"
-    elseif
-    engine == 2 then
-        engine = "Stage 3 Upgrade"
-    elseif
-    engine == 3 then
-        engine = "Stage 4 Upgrade"
-    end
-    if brakes == -1 then
-        brakes = "Standard"
-    elseif
-    brakes == 0 then
-        brakes = "Stage 1 Upgrade"
-    elseif
-    brakes == 1 then
-        brakes = "Stage 2 Upgrade"
-    elseif
-    brakes == 2 then
-        brakes = "Stage 3 Upgrade"
-    end
-    if transmission == -1 then
-        transmission = "Standard"
-    elseif
-    transmission == 0 then
-        transmission = "Stage 1 Upgrade"
-    elseif
-    transmission == 1 then
-        transmission = "Stage 2 Upgrade"
-    elseif
-    transmission == 2 then
-        transmission = "Stage 3 Upgrade"
-    end
-    if suspension == -1 then
-        suspension = "Standard"
-    elseif
-    suspension == 0 then
-        suspension = "Stage 1 Upgrade"
-    elseif
-    suspension == 1 then
-        suspension = "Stage 2 Upgrade"
-    elseif
-    suspension == 2 then
-        suspension = "Stage 3 Upgrade"
-    elseif
-    suspension == 3 then
-        suspension = "Stage 4 Upgrade"
-    end
-    if turbo == 1  then
-        turbo = "Turbo"
-    else
-        turbo = "N/A"
-    end
-
-    exports['qb-menu']:openMenu({
-        {
-            id = 1,
-            header = "Vehicle: " .. plate,
-            txt = "",
-            isMenuHeader = true
-        },
-        {
-            id = 2,
-            header = "Engine: ".. engine,
-            txt = "",
-            isMenuHeader = true
-        },
-        {
-            id = 3,
-            header = "Transmission: ".. transmission,
-            txt = "",
-            isMenuHeader = true
-        },
-        {
-            id = 4,
-            header = "Suspension: ".. suspension,
-            txt = "",
-            isMenuHeader = true
-        },
-        {
-            id = 5,
-            header = "Brakes: ".. brakes,
-            txt = "",
-            isMenuHeader = true
-        },
-        {
-            id = 6,
-            header = "Turbo: ".. turbo,
-            txt = "",
-            isMenuHeader = true
-        },
-        {
-            id = 7,
-            header = "Main Menu",
-            txt = "Back to main menu",
-            params = {
-                event = "craft:vehmenu",
-            }
-        },
-        {
-            id = 8,
-            header = "Close Menu",
-            txt = "",
-            params = {
-                event = "qb-menu:client:closeMenu",
-            }
-        },
-    })
-end)
-
--- QB MENU FOR CRAFTING
 
 RegisterNetEvent('craft:mechanicparts', function()
     exports['qb-menu']:openMenu({
@@ -1744,7 +1521,7 @@ RegisterNetEvent('craft:mechanicparts', function()
     })
 end)
 
------CRAFTING MENU
+
 
 RegisterNetEvent('craft:engines', function()
     exports['qb-menu']:openMenu({
@@ -1887,6 +1664,223 @@ RegisterNetEvent('craft:turbos', function()
             txt = "",
             params = {
                 event = "qb-menu:closeMenu",
+            }
+        },
+    })
+end)
+
+
+RegisterNetEvent('craft:vehmenu', function()
+    local ped = PlayerPedId()
+    local vehicle = QBCore.Functions.GetClosestVehicle()
+    local plate = QBCore.Functions.GetPlate(vehicle)
+
+    exports['qb-menu']:openMenu({
+        {
+            id = 1,
+            header = "Vehicle: " .. plate,
+            txt = "",
+            isMenuHeader = true
+        },
+        {
+            id = 2,
+            header = "Vehicle Status",
+            txt = "View vehicle health and status",
+            params = {
+                event = "craft:vehstatus",
+            }
+        },
+        {
+            id = 3,
+            header = "Vehicle Modifications",
+            txt = "View vehicles modifications and upgrades",
+            params = {
+                event = "craft:vehmods",
+            }
+        },
+        {
+            id = 4,
+            header = "Close Menu",
+            txt = "",
+            params = {
+                event = "qb-menu:client:closeMenu",
+            }
+        },
+    })
+end)
+
+RegisterNetEvent('craft:vehmods', function()
+    local ped = PlayerPedId()
+    local vehicle = QBCore.Functions.GetClosestVehicle()
+    local plate = QBCore.Functions.GetPlate(vehicle)
+    local statusList = exports['qb-mechanicjob']:GetVehicleStatusList(plate)
+    local fuel = exports['LegacyFuel']:GetFuel(vehicle)
+    local turbo = "Turbo"
+    if IsToggleModOn(vehicle, 18) == 0 then
+        turbo = "N/A"
+    end
+
+    local engine = "Stock"
+    local engineMod = GetVehicleMod(vehicle, 11)
+    if engineMod > 0 then
+        if engineMod == 0 then
+            engine = "Stock"
+        elseif engineMod == 1 then
+            engine = "Stage 1 Upgrade"
+        elseif engineMod == 2 then
+            engine = "Stage 2 Upgrade"
+        elseif engineMod == 3 then
+            engine = "Stage 3 Upgrade"
+        elseif engineMod == 4 then
+            engine = "Stage 4 Upgrade"
+        end
+    end
+
+    local transmission = "Stock"
+    local transMod = GetVehicleMod(vehicle, 13)
+    if transMod > 0 then
+        if transMod == 0 then
+            transmission = "Stock"
+        elseif transMod == 1 then
+            transmission = "Stage 1 Upgrade"
+        elseif transMod == 2 then
+            transmission = "Stage 2 Upgrade"
+        elseif transMod == 3 then
+            transmission = "Stage 3 Upgrade"
+        elseif transMod == 4 then
+            transmission = "Stage 4 Upgrade"
+        end   
+    end
+
+    local suspension = "Stock"
+    local susMod = GetVehicleMod(vehicle, 15)
+    if susMod > 0 then
+        if susMod == 0 then
+            suspension = "Stock"
+        elseif susMod == 1 then
+            suspension = "Stage 1 Upgrade"
+        elseif susMod == 2 then
+            suspension = "Stage 2 Upgrade"
+        elseif susMod == 3 then
+            suspension = "Stage 3 Upgrade"
+        elseif susMod == 4 then
+            suspension = "Stage 4 Upgrade"
+        end 
+    end
+
+    local brakes = "Stock"
+    local brakesMod = GetVehicleMod(vehicle, 15)
+    if brakesMod > 0 then
+        if brakesMod == 0 then
+            brakes = "Stock"
+        elseif brakesMod == 1 then
+            brakes = "Stage 1 Upgrade"
+        elseif brakesMod == 2 then
+            brakes = "Stage 2 Upgrade"
+        elseif brakesMod == 3 then
+            brakes = "Stage 3 Upgrade"
+        elseif brakesMod == 4 then
+            brakes = "Stage 4 Upgrade"
+        end 
+    end
+
+    exports['qb-menu']:openMenu({
+        {
+            id = 1,
+            header = "Vehicle: " .. plate,
+            txt = "",
+            isMenuHeader = true
+        },
+        {
+            id = 2,
+            header = "Engine: ".. engine,
+            txt = "",
+            isMenuHeader = true
+        },
+        {
+            id = 3,
+            header = "Transmission: ".. transmission,
+            txt = "",
+            isMenuHeader = true
+        },
+        {
+            id = 4,
+            header = "Suspension: ".. suspension,
+            txt = "",
+            isMenuHeader = true
+        },
+        {
+            id = 5,
+            header = "Brakes: ".. brakes,
+            txt = "",
+            isMenuHeader = true
+        },
+        {
+            id = 6,
+            header = "Turbo: ".. turbo,
+            txt = "",
+            isMenuHeader = true
+        },
+        {
+            id = 7,
+            header = "<-- Back",
+            txt = "",
+            params = {
+                event = "craft:vehmenu",
+            }
+        },
+    })
+end)
+
+-- VEHICLE HEALTH/STATUS
+RegisterNetEvent('craft:vehstatus', function()
+
+    local statusList = exports['qb-mechanicjob']:GetVehicleStatusList(plate)
+    local fuel = exports['LegacyFuel']:GetFuel(vehicle)
+    local vehicle = QBCore.Functions.GetClosestVehicle()
+    local plate = GetVehicleNumberPlateText(vehicle)
+    local engineHealth = GetVehicleEngineHealth(vehicle)
+    local vehTemp = GetVehicleEngineTemperature(vehicle)
+    local bodyHealth = GetVehicleBodyHealth(vehicle)
+    local fuelHealth = exports['LegacyFuel']:GetFuel(vehicle)
+    local tankHealth = GetVehiclePetrolTankHealth(vehicle)
+
+    exports['qb-menu']:openMenu({
+        {
+            id = 1,
+            header = "Fuel Level",
+            txt = "Status: " .. math.ceil(fuelHealth) .. ".0% / 100.0%",
+        },
+        {
+            id = 2,
+            header = "Engine Health",
+            txt = "Status: " .. math.ceil(engineHealth / 10) .. "% / 100.0%",
+        },
+        {
+            id = 3,
+            header = "Body Health",
+            txt = "Status: " .. math.ceil(bodyHealth / 10) .. "% / 100.0%",
+        },
+        {
+            id = 4,
+            header = "Engine Temperature",
+            txt = "Status: " .. math.ceil(vehTemp) .. "° C",
+        }, 
+
+        {
+            id = 5,
+            header = "Main Menu",
+            txt = "Back to main menu",
+            params = {
+                event = "craft:vehmenu",
+            }
+        },
+        {
+            id = 6,
+            header = "Close Menu",
+            txt = "",
+            params = {
+                event = "qb-menu:client:closeMenu",
             }
         },
     })
