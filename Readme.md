@@ -23,8 +23,10 @@ nh-context - https://github.com/nerohiro/nh-context
 nh-keyboard - https://github.com/nerohiro/nh-keyboard
 
 ## Credits : 
-Kyle
-DrB1ackBeard
+Kyle,
+
+DrB1ackBeard,
+
 ANZ Gaming
 
 ## Insert into #qb-core - shared/items.lua
