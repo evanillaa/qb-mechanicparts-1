@@ -296,6 +296,32 @@ AddEventHandler("craft:turbo1", function()
     end)
 end)
 
+--- REPAIR KITS ---
+RegisterNetEvent('craft:repairkit')
+AddEventHandler("craft:repairkit", function()
+    QBCore.Functions.Progressbar("craft_repairkit", "Getting Parts and Tools...", 15000, false, true, {
+        disableMovement = true,
+        disableCarMovement = true,
+        disableMouse = false,
+        disableCombat = true,
+    }, {
+        animDict = "mini@repair",
+        anim = "fixing_a_player",
+        flags = 16,
+    }, {}, {}, function() 
+        local playerPed = PlayerPedId()
+        local success = exports['qb-lock']:StartLockPickCircle(3,10)
+   if success then
+        StopAnimTask(ped, dict, "machinic_loop_mechandplayer", 1.0)
+        TriggerServerEvent("craft:repairkit")
+        ClearPedTasks(playerPed)
+    else
+        QBCore.Functions.Notify("Failed!", "error")
+        ClearPedTasks(playerPed)
+        end
+    end)
+end)
+
 --- PARTS INSTALLATION ---
 -- ENGINE
 RegisterNetEvent('qb-mechanicparts:E0')
@@ -1526,6 +1552,14 @@ RegisterNetEvent('craft:mechanicparts', function()
         },
         {
             id = 7,
+            header = "Tools & Equipment",
+            txt = " View Ivans Customs shop tool options ",
+            params = {
+                event = "craft:repairkit1",
+            }
+        },
+        {
+            id = 8,
             header = "Close Menu",
             txt = "",
             params = {
@@ -1852,7 +1886,40 @@ RegisterNetEvent('craft:turbos', function()
     })
 end)
 
-
+RegisterNetEvent('craft:repairkit1', function()
+    exports['qb-menu']:openMenu({
+        {
+            id = 1,
+            header = "Tools & Equipment",
+            txt = "",
+            isMenuHeader = true
+        },
+        {
+            id = 2,
+            header = "Repair Kit",
+            txt = "4x MetalScrap | 2x Rubber | 3x Plastic | 2x aluminum | 2x Steel",
+            params = {
+                event = "craft:repairkit",
+            }
+        },
+        {
+            id = 3,
+            header = "Main Menu",
+            txt = "Back to main menu",
+            params = {
+                event = "craft:mechanicparts",
+            }
+        },
+        {
+            id = 4,
+            header = "Close Menu",
+            txt = "",
+            params = {
+                event = "qb-menu:closeMenu",
+            }
+        },
+    })
+end)
 -------------------------------------- ONLY EDIT UNDER HERE / ABOVE WORKS AS IT SHOULD
 RegisterNetEvent('craft:vehmenu', function()
     local ped = PlayerPedId()
