@@ -135,8 +135,7 @@ Config.Peds = {
     scenario = "WORLD_HUMAN_CLIPBOARD",
 },```
 
-
+```
 Then, lastly:
 ## Insert images from zipfile into you inventory/html/images
-
-Restart Server, and try it out...
+```
