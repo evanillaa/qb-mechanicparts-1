@@ -137,3 +137,204 @@ Config.Peds = {
 ```
 Then, lastly:
 ## Insert images from zipfile into you inventory/html/images
+
+
+## Insert into shop/config.lua (To make items purchasable at Store for Mechanic Only if not wanting to craft them...)
+```
+    ["mechanic"] = {
+        [1] = {
+            name = "engine0",
+            price = 800,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 1,
+            requiredJob = { "mechanic" }
+        },
+        [2] = {
+            name = "engine1",
+            price = 1350,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 2,
+            requiredJob = { "mechanic" }
+        },
+        [3] = {
+            name = "engine2",
+            price = 6000,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 3,
+            requiredJob = { "mechanic" }
+        },
+        [4] = {
+            name = "engine3",
+            price = 11000,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 4,
+            requiredJob = { "mechanic" }
+        },
+        [5] = {
+            name = "engine4",
+            price = 16000,
+            amount = 2,
+            info = {},
+            type = "item",
+            slot = 5,
+            requiredJob = { "mechanic" }
+        },
+        [6] = {
+            name = "brake0",
+            price = 375,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 6,
+            requiredJob = { "mechanic" }
+        },
+        [7] = {
+            name = "brake1",
+            price = 1000,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 7,
+            requiredJob = { "mechanic" }
+        },
+        [8] = {
+            name = "brake2",
+            price = 2250,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 8,
+            requiredJob = { "mechanic" }
+        },
+        [9] = {
+            name = "brake3",
+            price = 3750,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 9,
+            requiredJob = { "mechanic" }
+        },
+        [11] = {
+            name = "transmission0",
+            price = 700,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 11,
+            requiredJob = { "mechanic" }
+        },
+        [12] = {
+            name = "transmission1",
+            price = 1500,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 12,
+            requiredJob = { "mechanic" }
+        },
+        [13] = {
+            name = "transmission2",
+            price = 3250,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 13,
+            requiredJob = { "mechanic" }
+        },
+        [14] = {
+            name = "transmission3",
+            price = 4250,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 14,
+            requiredJob = { "mechanic" }
+        },
+        [16] = {
+            name = "suspension0",
+            price = 300,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 16,
+            requiredJob = { "mechanic" }
+        },
+        [17] = {
+            name = "suspension1",
+            price = 880,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 17,
+            requiredJob = { "mechanic" }
+        },
+        [18] = {
+            name = "suspension2",
+            price = 2250,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 18,
+            requiredJob = { "mechanic" }
+        },
+        [19] = {
+            name = "suspension3",
+            price = 4750,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 19,
+            requiredJob = { "mechanic" }
+        },
+        [20] = {
+            name = "turbo0",
+            price = 500,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 20,
+            requiredJob = { "mechanic" }
+        },
+        [21] = {
+            name = "turbo1",
+            price = 5000,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 21,
+            requiredJob = { "mechanic" }
+        },
+        [22] = {
+            name = "cleaningkit",
+            price = 18,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 22,
+            requiredJob = { "mechanic" }
+        },
+    },
+```
+```
+        ["tunershop"] = {
+        ["label"] = "Ivans Shop",
+        ["type"] = "normal",
+        ["coords"] = {
+            [1] = vector3(148.36, -3050.99, 7.04),
+            [2] = vector3(-35.85, -1070.24, 28.4),
+        },
+        ["products"] = Config.Products["mechanic"],
+        ["showblip"] = false,
+        ["blipsprite"] = 402
+    },
+    ```
+
