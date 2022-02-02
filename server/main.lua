@@ -242,6 +242,7 @@ AddEventHandler("craft:engine0", function()
     local rubber = Player.Functions.GetItemByName("rubber")
     local iron = Player.Functions.GetItemByName("iron")
     local plastic = Player.Functions.GetItemByName("plastic")
+    
     if metalscrap ~= nil and rubber ~= nil and iron ~= nil and plastic ~= nil then
 
         if metalscrap.amount >= 3 and rubber.amount >= 2 and iron.amount >= 1 and plastic.amount >= 2 then
@@ -272,6 +273,7 @@ AddEventHandler("craft:engine1", function()
     local rubber = Player.Functions.GetItemByName("rubber")
     local iron = Player.Functions.GetItemByName("iron")
     local plastic = Player.Functions.GetItemByName("plastic")
+
     if metalscrap ~= nil and rubber ~= nil and iron ~= nil and plastic ~= nil then
 
         if metalscrap.amount >= 3 and rubber.amount >= 2 and iron.amount >= 1 and plastic.amount >= 2 then
@@ -302,6 +304,7 @@ AddEventHandler("craft:engine2", function()
     local rubber = Player.Functions.GetItemByName("rubber")
     local iron = Player.Functions.GetItemByName("iron")
     local plastic = Player.Functions.GetItemByName("plastic")
+
     if metalscrap ~= nil and rubber ~= nil and iron ~= nil and plastic ~= nil then
 
         if metalscrap.amount >= 4 and rubber.amount >= 2 and iron.amount >= 1 and plastic.amount >= 2 then
@@ -332,6 +335,7 @@ AddEventHandler("craft:engine3", function()
     local rubber = Player.Functions.GetItemByName("rubber")
     local iron = Player.Functions.GetItemByName("iron")
     local plastic = Player.Functions.GetItemByName("plastic")
+
     if metalscrap ~= nil and rubber ~= nil and iron ~= nil and plastic ~= nil then
 
         if metalscrap.amount >= 4 and rubber.amount >= 2 and iron.amount >= 1 and plastic.amount >= 3 then
@@ -363,6 +367,7 @@ AddEventHandler("craft:engine4", function()
     local iron = Player.Functions.GetItemByName("iron")
     local plastic = Player.Functions.GetItemByName("plastic")
     local aluminum = Player.Functions.GetItemByName("aluminum")
+
     if metalscrap ~= nil and rubber ~= nil and iron ~= nil and plastic ~= nil then
 
         if metalscrap.amount >= 4 and rubber.amount >= 2 and iron.amount >= 1 and plastic.amount >= 3 and aluminum.amount >= 3 then
@@ -393,6 +398,7 @@ AddEventHandler("craft:brake0", function()
     local rubber = Player.Functions.GetItemByName("rubber")
     local iron = Player.Functions.GetItemByName("iron")
     local metalscrap = Player.Functions.GetItemByName("metalscrap")
+
     if rubber ~= nil and iron ~= nil  and metalscrap ~= nil then
 
         if rubber.amount >= 2 and iron.amount >= 1 and metalscrap.amount >= 2 then
@@ -421,6 +427,7 @@ AddEventHandler("craft:brake1", function()
     local rubber = Player.Functions.GetItemByName("rubber")
     local iron = Player.Functions.GetItemByName("iron")
     local metalscrap = Player.Functions.GetItemByName("metalscrap")
+
     if rubber ~= nil and iron ~= nil  and metalscrap ~= nil then
 
         if rubber.amount >= 2 and iron.amount >= 1 and metalscrap.amount >= 2 then
@@ -449,6 +456,7 @@ AddEventHandler("craft:brake2", function()
     local rubber = Player.Functions.GetItemByName("rubber")
     local iron = Player.Functions.GetItemByName("iron")
     local metalscrap = Player.Functions.GetItemByName("metalscrap")
+
     if rubber ~= nil and iron ~= nil  and metalscrap ~= nil then
 
         if rubber.amount >= 2 and iron.amount >= 1 and metalscrap.amount >= 2 then
@@ -477,6 +485,7 @@ AddEventHandler("craft:brake3", function()
     local rubber = Player.Functions.GetItemByName("rubber")
     local iron = Player.Functions.GetItemByName("iron")
     local metalscrap = Player.Functions.GetItemByName("metalscrap")
+
     if rubber ~= nil and iron ~= nil  and metalscrap ~= nil then
 
         if rubber.amount >= 3 and iron.amount >= 2 and metalscrap.amount >= 2 then
@@ -505,6 +514,7 @@ AddEventHandler("craft:brake4", function()
     local rubber = Player.Functions.GetItemByName("rubber")
     local iron = Player.Functions.GetItemByName("iron")
     local metalscrap = Player.Functions.GetItemByName("metalscrap")
+
     if rubber ~= nil and iron ~= nil  and metalscrap ~= nil then
 
         if rubber.amount >= 3 and iron.amount >= 2 and metalscrap.amount >= 2 then
@@ -535,6 +545,7 @@ AddEventHandler("craft:turbo0", function()
     local rubber = Player.Functions.GetItemByName("rubber")
     local iron = Player.Functions.GetItemByName("iron")
     local metalscrap = Player.Functions.GetItemByName("metalscrap")
+
     if rubber ~= nil and iron ~= nil  and metalscrap ~= nil then
 
         if rubber.amount >= 3 and iron.amount >= 2 and metalscrap.amount >= 2 then
@@ -563,6 +574,7 @@ AddEventHandler("craft:turbo1", function()
     local rubber = Player.Functions.GetItemByName("rubber")
     local iron = Player.Functions.GetItemByName("iron")
     local metalscrap = Player.Functions.GetItemByName("metalscrap")
+
     if rubber ~= nil and iron ~= nil  and metalscrap ~= nil then
 
         if rubber.amount >= 3 and iron.amount >= 2 and metalscrap.amount >= 2 then
@@ -584,4 +596,38 @@ AddEventHandler("craft:turbo1", function()
 
 end)
 
-----------ONLY ENGINE, BRAKES AND TURBO COMPLETED FOR CRAFTING SO FAR----------
+RegisterServerEvent("craft:repairkit")
+AddEventHandler("craft:repairkit", function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    local metalscrap = Player.Functions.GetItemByName("metalscrap")
+    local rubber = Player.Functions.GetItemByName("rubber")
+    local iron = Player.Functions.GetItemByName("iron")
+    local plastic = Player.Functions.GetItemByName("plastic")
+    local aluminum = Player.Functions.GetItemByName("aluminum")
+    local steel = Player.Functions.GetItemByName("steel")
+
+    if metalscrap ~= nil and rubber ~= nil and iron ~= nil and plastic ~= nil then
+
+        if metalscrap.amount >= 4 and rubber.amount >= 2 and plastic.amount >= 3 and aluminum.amount >= 2 and steel.amount >= 2 then
+            Player.Functions.RemoveItem("metalscrap", 4)
+            Player.Functions.RemoveItem("rubber", 2)
+            Player.Functions.RemoveItem("plastic", 3)
+            Player.Functions.RemoveItem("aluminum", 2)
+            Player.Functions.RemoveItem("steel", 2)
+
+            Player.Functions.AddItem("repairkit", 1)
+            TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["repairkit"], "add")
+            TriggerClientEvent('QBCore:Notify', src, 'You built a Repair Kit.', 'success')
+
+        else
+            TriggerClientEvent('QBCore:Notify', src, 'You dont have the correct amount of something...', 'error')
+        end
+
+    else
+        TriggerClientEvent("QBCore:Notify", src, "You are missing parts...", "error")
+    end
+
+end)
+
+----------ONLY ENGINE, BRAKES AND TURBO COMPLETED FOR CRAFTING SO FAR (AND REPAIR KITS) ----------
