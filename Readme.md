@@ -326,7 +326,7 @@ Then, lastly:
 ```
 ```
         ["tunershop"] = {
-        ["label"] = "Ivans Shop",
+        ["label"] = "Tuner Shop",
         ["type"] = "normal",
         ["coords"] = {
             [1] = vector3(148.36, -3050.99, 7.04),
