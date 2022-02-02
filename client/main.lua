@@ -1476,8 +1476,6 @@ end)
 ---------YOU MUST CONVERT TO WHAT YOUR USING IF NOT USING QB MENU--------
 -------------------------------------------------------------------------
 
--- VEHICLE MENU
-
 RegisterNetEvent('craft:mechanicparts', function()
     exports['qb-menu']:openMenu({
         {
@@ -1504,6 +1502,22 @@ RegisterNetEvent('craft:mechanicparts', function()
         },
         {
             id = 4,
+            header = "Transmission Upgrades",
+            txt = " View transmission upgrades for vehicles ",
+            params = {
+                event = "craft:transmissions",
+            }
+        },
+        {
+            id = 5,
+            header = "Suspension Modifications",
+            txt = " View suspension modifications for vehicles ",
+            params = {
+                event = "craft:suspensions",
+            }
+        },
+        {
+            id = 6,
             header = "Turbos",
             txt = " View turbo options for vehicles ",
             params = {
@@ -1511,7 +1525,7 @@ RegisterNetEvent('craft:mechanicparts', function()
             }
         },
         {
-            id = 5,
+            id = 7,
             header = "Close Menu",
             txt = "",
             params = {
@@ -1609,6 +1623,38 @@ RegisterNetEvent('craft:brakes', function()
         },
         {
             id = 3,
+            header = "Brake Upgrade B",
+            txt = "2x Rubber | 1x Iron | 2x Metalscrap",
+            params = {
+                event = "craft:brake1",
+            }
+        },
+        {
+            id = 4,
+            header = "Brake Upgrade C",
+            txt = "2x Rubber | 1x Iron | 2x Metalscrap",
+            params = {
+                event = "craft:brake2",
+            }
+        },
+        {
+            id = 5,
+            header = "Brake Upgrade D",
+            txt = "3x Rubber | 2x Iron | 2x Metalscrap",
+            params = {
+                event = "craft:brake3",
+            }
+        },
+        {
+            id = 6,
+            header = "Brake Upgrade S",
+            txt = "3x Rubber | 2x Iron | 2x Metalscrap",
+            params = {
+                event = "craft:brake4",
+            }
+        },
+        {
+            id = 7,
             header = "Main Menu",
             txt = "Back to main menu",
             params = {
@@ -1616,7 +1662,144 @@ RegisterNetEvent('craft:brakes', function()
             }
         },
         {
+            id = 8,
+            header = "Close Menu",
+            txt = "",
+            params = {
+                event = "qb-menu:closeMenu",
+            }
+        },
+    })
+end)
+
+
+
+--------------- HAVENT MESSED WITH THE REQUIREMENTS DISPLAYED FOR BELOW ------------------
+RegisterNetEvent('craft:transmissions', function()
+    exports['qb-menu']:openMenu({
+        {
+            id = 1,
+            header = "Transmission Modifications",
+            txt = "",
+            isMenuHeader = true
+        },
+        {
+            id = 2,
+            header = "Stock Transmission",
+            txt = "2x Rubber | 1x Iron | 2x Metalscrap",
+            params = {
+                event = "craft:transmission0",
+            }
+        },
+        {
+            id = 3,
+            header = "Transmission Upgrade B",
+            txt = "2x Rubber | 1x Iron | 2x Metalscrap",
+            params = {
+                event = "craft:transmission1",
+            }
+        },
+        {
             id = 4,
+            header = "Transmission Upgrade C",
+            txt = "2x Rubber | 1x Iron | 2x Metalscrap",
+            params = {
+                event = "craft:transmission2",
+            }
+        },
+        {
+            id = 5,
+            header = "Transmission Upgrade D",
+            txt = "3x Rubber | 2x Iron | 2x Metalscrap",
+            params = {
+                event = "craft:transmission3",
+            }
+        },
+        {
+            id = 6,
+            header = "Transmission Upgrade S",
+            txt = "3x Rubber | 2x Iron | 2x Metalscrap",
+            params = {
+                event = "craft:transmission4",
+            }
+        },
+        {
+            id = 7,
+            header = "Main Menu",
+            txt = "Back to main menu",
+            params = {
+                event = "craft:mechanicparts",
+            }
+        },
+        {
+            id = 8,
+            header = "Close Menu",
+            txt = "",
+            params = {
+                event = "qb-menu:closeMenu",
+            }
+        },
+    })
+end)
+
+RegisterNetEvent('craft:suspensions', function()
+    exports['qb-menu']:openMenu({
+        {
+            id = 1,
+            header = "Suspension Modifications",
+            txt = "",
+            isMenuHeader = true
+        },
+        {
+            id = 2,
+            header = "Stock Suspension",
+            txt = "2x Rubber | 1x Iron | 2x Metalscrap",
+            params = {
+                event = "craft:suspension0",
+            }
+        },
+        {
+            id = 3,
+            header = "Suspension Upgrade B",
+            txt = "2x Rubber | 1x Iron | 2x Metalscrap",
+            params = {
+                event = "craft:suspension1",
+            }
+        },
+        {
+            id = 4,
+            header = "Suspension Upgrade C",
+            txt = "2x Rubber | 1x Iron | 2x Metalscrap",
+            params = {
+                event = "craft:suspension2",
+            }
+        },
+        {
+            id = 5,
+            header = "Suspension Upgrade D",
+            txt = "3x Rubber | 2x Iron | 2x Metalscrap",
+            params = {
+                event = "craft:suspension3",
+            }
+        },
+        {
+            id = 6,
+            header = "Suspension Upgrade S",
+            txt = "3x Rubber | 2x Iron | 2x Metalscrap",
+            params = {
+                event = "craft:suspension4",
+            }
+        },
+        {
+            id = 7,
+            header = "Main Menu",
+            txt = "Back to main menu",
+            params = {
+                event = "craft:mechanicparts",
+            }
+        },
+        {
+            id = 8,
             header = "Close Menu",
             txt = "",
             params = {
@@ -1670,6 +1853,7 @@ RegisterNetEvent('craft:turbos', function()
 end)
 
 
+-------------------------------------- ONLY EDIT UNDER HERE / ABOVE WORKS AS IT SHOULD
 RegisterNetEvent('craft:vehmenu', function()
     local ped = PlayerPedId()
     local vehicle = QBCore.Functions.GetClosestVehicle()
@@ -1715,25 +1899,39 @@ RegisterNetEvent('craft:vehmods', function()
     local plate = QBCore.Functions.GetPlate(vehicle)
     local statusList = exports['qb-mechanicjob']:GetVehicleStatusList(plate)
     local fuel = exports['LegacyFuel']:GetFuel(vehicle)
-    local turbo = "Turbo"
-    if IsToggleModOn(vehicle, 18) == 0 then
-        turbo = "N/A"
+    local turbo = "N/A"
+    if IsToggleModOn(vehicle, 18) == 1 then
+        turbo = "Turbo"
     end
 
     local engine = "Stock"
     local engineMod = GetVehicleMod(vehicle, 11)
-    if engineMod > 0 then
-        if engineMod == 0 then
+    if engineMod > -1 then
+        if engineMod == -1 then
             engine = "Stock"
-        elseif engineMod == 1 then
+        elseif engineMod == 0 then    
             engine = "Stage 1 Upgrade"
-        elseif engineMod == 2 then
+        elseif engineMod == 1 then
             engine = "Stage 2 Upgrade"
-        elseif engineMod == 3 then
+        elseif engineMod == 2 then
             engine = "Stage 3 Upgrade"
-        elseif engineMod == 4 then
+        elseif engineMod == 3 then
             engine = "Stage 4 Upgrade"
         end
+    end
+
+    local brakes = "Stock"
+    local brakesMod = GetVehicleMod(vehicle, 12)
+    if brakesMod > -1 then
+        if brakesMod == -1 then
+            brakes = "Stock"
+        elseif brakesMod == 0 then
+            brakes = "Stage 1 Upgrade"    
+        elseif brakesMod == 1 then
+            brakes = "Stage 2 Upgrade"
+        elseif brakesMod == 2 then
+            brakes = "Stage 3 Upgrade"
+        end  
     end
 
     local transmission = "Stock"
@@ -1741,46 +1939,28 @@ RegisterNetEvent('craft:vehmods', function()
     if transMod > 0 then
         if transMod == 0 then
             transmission = "Stock"
-        elseif transMod == 1 then
+        elseif transMod == 0 then    
             transmission = "Stage 1 Upgrade"
-        elseif transMod == 2 then
+        elseif transMod == 1 then
             transmission = "Stage 2 Upgrade"
-        elseif transMod == 3 then
+        elseif transMod == 2 then
             transmission = "Stage 3 Upgrade"
-        elseif transMod == 4 then
-            transmission = "Stage 4 Upgrade"
         end   
     end
 
     local suspension = "Stock"
     local susMod = GetVehicleMod(vehicle, 15)
-    if susMod > 0 then
-        if susMod == 0 then
+    if susMod > -1 then
+        if susMod == -1 then
             suspension = "Stock"
+        elseif susMod == 0 then
+            suspension = "Stage 1 Upgrade"    
         elseif susMod == 1 then
-            suspension = "Stage 1 Upgrade"
-        elseif susMod == 2 then
             suspension = "Stage 2 Upgrade"
-        elseif susMod == 3 then
+        elseif susMod == 2 then
             suspension = "Stage 3 Upgrade"
-        elseif susMod == 4 then
+        elseif susMod == 3 then
             suspension = "Stage 4 Upgrade"
-        end 
-    end
-
-    local brakes = "Stock"
-    local brakesMod = GetVehicleMod(vehicle, 15)
-    if brakesMod > 0 then
-        if brakesMod == 0 then
-            brakes = "Stock"
-        elseif brakesMod == 1 then
-            brakes = "Stage 1 Upgrade"
-        elseif brakesMod == 2 then
-            brakes = "Stage 2 Upgrade"
-        elseif brakesMod == 3 then
-            brakes = "Stage 3 Upgrade"
-        elseif brakesMod == 4 then
-            brakes = "Stage 4 Upgrade"
         end 
     end
 
@@ -1836,14 +2016,14 @@ end)
 RegisterNetEvent('craft:vehstatus', function()
 
     local statusList = exports['qb-mechanicjob']:GetVehicleStatusList(plate)
-    local fuel = exports['LegacyFuel']:GetFuel(vehicle)
-    local vehicle = QBCore.Functions.GetClosestVehicle()
-    local plate = GetVehicleNumberPlateText(vehicle)
-    local engineHealth = GetVehicleEngineHealth(vehicle)
-    local vehTemp = GetVehicleEngineTemperature(vehicle)
-    local bodyHealth = GetVehicleBodyHealth(vehicle)
-    local fuelHealth = exports['LegacyFuel']:GetFuel(vehicle)
-    local tankHealth = GetVehiclePetrolTankHealth(vehicle)
+    fuel = exports['LegacyFuel']:GetFuel(vehicle)
+    vehicle = QBCore.Functions.GetClosestVehicle()
+    plate = GetVehicleNumberPlateText(vehicle)
+    engineHealth = GetVehicleEngineHealth(vehicle)
+    vehTemp = GetVehicleEngineTemperature(vehicle)
+    bodyHealth = GetVehicleBodyHealth(vehicle)
+    fuelHealth = exports['LegacyFuel']:GetFuel(vehicle)
+    tankHealth = GetVehiclePetrolTankHealth(vehicle)
 
     exports['qb-menu']:openMenu({
         {
