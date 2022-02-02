@@ -25,9 +25,8 @@ nh-keyboard - https://github.com/nerohiro/nh-keyboard
 ## Credits : 
 Kyle,
 
-DrB1ackBeard,
+DrB1ackBeard
 
-ANZ Gaming
 
 ## Insert into #qb-core - shared/items.lua
 ```
