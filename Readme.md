@@ -17,9 +17,13 @@ Issues :
 
 ## Dependencies :
 QB Framework - https://github.com/qbcore-framework/qb-core
+
 PolyZone - https://github.com/mkafrin/PolyZone
+
 qb-target - https://github.com/BerkieBb/qb-target
+
 nh-context - https://github.com/nerohiro/nh-context
+
 nh-keyboard - https://github.com/nerohiro/nh-keyboard
 
 ## Credits : 
