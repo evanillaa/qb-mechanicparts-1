@@ -96,7 +96,7 @@ QBShared.Jobs = {
 ```
 ['gasmonkey'] = vector3(, , )),
 ```
-## Insert into #qb-target - config.lua - config.targetmodels
+## Insert into #qb-target
 ```
 Config.TargetBones = {
 	["mechanic"] = {
@@ -120,7 +120,7 @@ Config.TargetBones = {
 }
 ```
 
-```## Insert into #qb-target - config.lua - config.targetmodels
+```
 Config.Peds = {
 { -------Tuner Shop------
 	model = 's_m_y_xmech_01',
