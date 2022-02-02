@@ -138,4 +138,3 @@ Config.Peds = {
 ```
 Then, lastly:
 ## Insert images from zipfile into you inventory/html/images
-```
